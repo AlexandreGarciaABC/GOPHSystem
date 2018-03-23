@@ -1,29 +1,28 @@
 <?php
 require_once('mail/class.phpmailer.php'); //chama a classe de onde você a colocou.
+require_once('mail/class.smtp.php'); //chama a classe de onde você a colocou.
 
 $mail = new PHPMailer(); // instancia a classe PHPMailer
 
 $mail->IsSMTP();
 
 //configuração do gmail
-$mail->Port = '465'; //porta usada pelo gmail.
+$mail->Port = '587'; //porta usada pelo gmail.
 $mail->Host = 'smtp.gmail.com'; 
 $mail->IsHTML(true); 
-$mail->Mailer = 'smtp'; 
-$mail->SMTPSecure = 'ssl';
+$mail->Mailer = 'smtp';
+$mail->SMTPSecure = 'tls';
 
 //configuração do usuário do gmail
 $mail->SMTPAuth = true; 
-$mail->Username = 'zaswes.habbo@gmail.com'; // usuario gmail.   
-$mail->Password = 'Habbo_Mail7351'; // senha do email.
-
-$mail->SingleTo = true; 
+$mail->Username = 'xxxxxxxxx@gmail.com'; // usuario gmail.   
+$mail->Password = 'xxxxxxx'; // senha do email.
 
 // configuração do email a ver enviado.
-$mail->From = "Mensagem de email, pode vim por uma variavel."; 
-$mail->FromName = "Zaswes"; 
+$mail->From = "xxxxxx@gmail.com"; 
+$mail->FromName = "XXX xX"; 
 
-$mail->addAddress("zaswes.habbo@gmail.com"); // email do destinatario.
+$mail->addAddress("XXXXXXXX@gmail.com"); // email do destinatario.
 
 $mail->Subject = "Aqui vai o assunto do email, pode vim atraves de variavel."; 
 $mail->Body = "Aqui vai a mensagem, que tambem pode vim por variavel.";
